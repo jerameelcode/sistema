@@ -2,11 +2,25 @@ package com.meel.sistema.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
+@Entity
 public class Categoria implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@NotBlank
+	@Min(value = 10, message = "O Nome da categoria tem que ser maior que 10 caracteres")
+	@Max(value = 30, message = "O Nome da categoria tem que ser menor que 30 caracteres")
 	private String nome;
 	
 	public Categoria() {}
