@@ -29,7 +29,6 @@ public class CategoriaResource {
 	private CategoriaRepository categoriaRepository;
 	
 	public CategoriaResource() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
@@ -79,5 +78,4 @@ public class CategoriaResource {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 	}
-
 }
